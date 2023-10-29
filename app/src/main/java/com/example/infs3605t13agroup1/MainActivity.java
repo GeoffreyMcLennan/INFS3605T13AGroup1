@@ -2,6 +2,8 @@ package com.example.infs3605t13agroup1;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +11,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -18,11 +22,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private String selectedService;
+    private static int PERMISSION_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
 
         layoutManager = new LinearLayoutManager(this);
         ImageButton policeButton = findViewById(R.id.policeButton);
@@ -47,11 +53,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, PERMISSION_CODE);
+        }
+
         policeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the Police");
-                selectedService = "police";
+                selectedService = "Police";
             }
         });
 
@@ -59,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the Fire Brigade");
-                selectedService = "fire";
+                selectedService = "Fire and Rescue";
             }
         });
 
@@ -67,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the State Emergency Service");
-                selectedService = "ses";
+                selectedService = "SES";
             }
         });
         ambulanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the Ambulance");
-                selectedService = "ambulance";
+                selectedService = "Ambulance";
             }
         });
 
@@ -87,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 // Implement call functionality here
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                String phoneNumber = "99999";
+                intent.setData(Uri.parse("tel:"+phoneNumber));
+                startActivity(intent);
             }
         });
         builder.setNegativeButton("Text", new DialogInterface.OnClickListener() {

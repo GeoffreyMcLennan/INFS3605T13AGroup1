@@ -53,6 +53,8 @@ public class TextActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(getIntent().getStringExtra("service"));
         locationQuestion = true;
 
         calendar = Calendar.getInstance();
