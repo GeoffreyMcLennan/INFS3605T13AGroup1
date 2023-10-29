@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
+    private String selectedService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the Police");
+                selectedService = "police";
             }
         });
 
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the Fire Brigade");
+                selectedService = "fire";
             }
         });
 
@@ -63,13 +67,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the State Emergency Service");
+                selectedService = "ses";
             }
         });
-
         ambulanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showEmergencyDialog("the Ambulance");
+                selectedService = "ambulance";
             }
         });
 
@@ -88,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 // Implement text functionality here
+                Intent intent = new Intent(MainActivity.this, TextActivity.class);
+                intent.putExtra("service", selectedService);
+                startActivity(intent);
             }
         });
         builder.show();
