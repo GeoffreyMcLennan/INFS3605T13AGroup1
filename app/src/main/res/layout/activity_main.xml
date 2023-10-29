@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="21dp"
-        android:text="Sydney"
+        android:text="Sydney, Australia"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -72,7 +72,7 @@
 
     <FrameLayout
         android:layout_width="350dp"
-        android:layout_height="200dp"
+        android:layout_height="215dp"
         android:layout_gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,10 +84,10 @@
             android:layout_height="match_parent">
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/policeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="60dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/rectangle_2"
@@ -95,37 +95,85 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/fireButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/rectangle_3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/SESButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="60dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/rectangle_4"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/ambulanceButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/rectangle_1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Police"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/policeButton"
+                app:layout_constraintEnd_toEndOf="@+id/policeButton"
+                app:layout_constraintStart_toStartOf="@+id/policeButton" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fire Brigade"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/fireButton"
+                app:layout_constraintEnd_toEndOf="@+id/fireButton"
+                app:layout_constraintStart_toStartOf="@+id/fireButton" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SES"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/SESButton"
+                app:layout_constraintEnd_toEndOf="@+id/SESButton"
+                app:layout_constraintStart_toStartOf="@+id/SESButton" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ambulance"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/ambulanceButton"
+                app:layout_constraintEnd_toEndOf="@+id/ambulanceButton"
+                app:layout_constraintStart_toStartOf="@+id/ambulanceButton" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -139,7 +187,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
