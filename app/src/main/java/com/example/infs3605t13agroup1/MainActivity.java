@@ -30,28 +30,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        layoutManager = new LinearLayoutManager(this);
         ImageButton policeButton = findViewById(R.id.policeButton);
         ImageButton fireButton = findViewById(R.id.fireButton);
         ImageButton sesButton = findViewById(R.id.SESButton);
         ImageButton ambulanceButton = findViewById(R.id.ambulanceButton);
+        ImageButton infoButton = findViewById(R.id.infoButton);
 
         BottomNavigationView bottomNavView = findViewById(R.id.bottom_nav_view);
-        final Context context = this; // Store MainActivity.this in a final variable
-        bottomNavView.setOnNavigationItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.menu_settings) {
-                startActivity(new Intent(context, SettingsActivity.class));
-                return true;
-            } else if (item.getItemId() == R.id.menu_home) {
-                startActivity(new Intent(context, MainActivity.class));
-                return true;
-            } else if (item.getItemId() == R.id.menu_profile) {
-                startActivity(new Intent(context, ProfileActivity.class));
-                return true;
-            } else {
-                return false;
-            }
-        });
+        BottomNavigationHelper.setupBottomNavigation(bottomNavView, this);
 
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, PERMISSION_CODE);
@@ -88,7 +74,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showInfoDialog();
+            }
+        });
     }
+
     private void showEmergencyDialog(String serviceName) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Contact " + serviceName);
@@ -99,10 +92,11 @@ public class MainActivity extends AppCompatActivity {
                 // Implement call functionality here
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 String phoneNumber = "99999";
-                intent.setData(Uri.parse("tel:"+phoneNumber));
+                intent.setData(Uri.parse("tel:" + phoneNumber));
                 startActivity(intent);
             }
         });
+
         builder.setNegativeButton("Text", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -114,6 +108,21 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
-
-
+    private void showInfoDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Information");
+        builder.setMessage("If you do not know the nature of your emergency, please click the SOS button " +
+                "to automatically call a Triple Zero (000) operator. Select the Ambulance, Police, Fire " +
+                "or State Emergency Service button if you do know the nature of your emergency. " +
+                "Only call emergency services if it is a genuine emergency.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Dismiss the dialog when OK is clicked (optional)
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 }

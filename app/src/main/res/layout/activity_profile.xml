@@ -1,0 +1,207 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- CheckBoxes for health conditions -->
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="Personal Health History"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="Let's assess your current medical background"
+                android:textColor="#AEAEAE"
+                android:textSize="16sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <!-- Centered TextView inside FrameLayout -->
+
+                <!-- Horizontal LinearLayout to hold two sets of CheckBoxes -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- First set of CheckBoxes -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAcidReflux"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Acid Reflux" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAlcoholAddiction"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Alcohol Addiction" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxDepression"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Depression" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxSleepDisorders"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sleep Disorders" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxObesity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Obesity" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxThyroidIssues"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thyroid Issues" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxArthritis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Arthritis" />
+
+                        <!-- Add more CheckBoxes for the first set as needed -->
+
+                    </LinearLayout>
+
+                    <!-- Second set of CheckBoxes -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAllergyProblems"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Allergy Problems" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAnemia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Anemia" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAsthma"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Asthma" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxDiabetes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Diabetes" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxHighBloodPressure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="High Blood Pressure" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxHeartDisease"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Heart Disease" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxAutoImmuneDisease"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Autoimmune Disease" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+            <!-- Other CheckBoxes -->
+
+            <!-- EditText fields for additional medical details -->
+            <EditText
+                android:id="@+id/editTextOtherMedicalIssues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Other Medical Issues" />
+
+            <EditText
+                android:id="@+id/editTextSignificantInjuries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Significant Injuries" />
+
+            <EditText
+                android:id="@+id/editTextSurgeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Surgeries/Procedures" />
+
+            <!-- Save Button -->
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="Save" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>
+
+
+

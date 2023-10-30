@@ -24,6 +24,12 @@
             android:name=".TextActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
+        <activity android:name=".SettingsActivity">
+
+        </activity>
+        <activity android:name=".ProfileActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

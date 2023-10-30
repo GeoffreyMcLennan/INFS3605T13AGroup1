@@ -8,13 +8,14 @@
     android:background="@android:color/transparent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <ImageButton
+        android:id="@+id/infoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/info_48px"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,9 +71,21 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Tap in case of emergency"
+        android:textColor="#D3D2D2"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
     <FrameLayout
-        android:layout_width="350dp"
-        android:layout_height="215dp"
+        android:layout_width="400dp"
+        android:layout_height="250dp"
         android:layout_gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
         app:layout_constraintEnd_toEndOf="parent"
