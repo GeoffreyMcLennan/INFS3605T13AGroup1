@@ -28,7 +28,7 @@
         </vector>
 
     </item>
-    <item android:drawable="@drawable/car"
+    <item android:drawable="@drawable/wrench"
         android:width="70dp"
         android:height="70dp"
         android:gravity="center"

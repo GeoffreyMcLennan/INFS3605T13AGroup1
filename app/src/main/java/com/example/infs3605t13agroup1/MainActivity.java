@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -117,11 +118,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void showEmergencyDialog(String serviceName) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Contact " + serviceName);
-        builder.setMessage("Do you want to call or text " + serviceName + "?");
-        builder.setPositiveButton("Call", new DialogInterface.OnClickListener() {
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialogue_custom_layout, null);
+
+        // Set custom view with phone and message icons
+        builder.setView(dialogView);
+
+        TextView serviceNameTextView = dialogView.findViewById(R.id.serviceNameTextView);
+        serviceNameTextView.setText("Contact " + serviceName);
+
+        ImageButton phoneIconButton = dialogView.findViewById(R.id.phoneIconButton);
+        ImageButton messageIconButton = dialogView.findViewById(R.id.messageIconButton);
+
+        phoneIconButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(View view) {
                 // Implement call functionality here
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 String phoneNumber = "99999";
@@ -130,16 +141,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        builder.setNegativeButton("Text", new DialogInterface.OnClickListener() {
+        messageIconButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(View view) {
                 // Implement text functionality here
                 Intent intent = new Intent(MainActivity.this, TextActivity.class);
-                intent.putExtra("service", selectedService);
+                intent.putExtra("service", serviceName);
                 startActivity(intent);
             }
         });
-        builder.show();
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     private void showInfoDialog(String title, String message) {
