@@ -16,7 +16,7 @@ android:height="250dp">
 
             <path
                 android:pathData="M0 0V111H171V0"
-                android:fillColor="#F1F1F1" />
+                android:fillColor="#E73743" />
 
             <path
                 android:pathData="M30 0H141C157.569 0 171 13.4315 171 30V81C171 97.5685 157.569 111 141 111H30C13.4315 111 0 97.5685 0 81V30C0 13.4315 13.4315 0 30 0Z"
