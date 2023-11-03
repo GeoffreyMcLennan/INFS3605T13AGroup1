@@ -2,6 +2,7 @@ package com.example.infs3605t13agroup1;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -22,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_profile);
 
         checkBoxAcidReflux = findViewById(R.id.checkBoxAcidReflux);
@@ -32,15 +34,18 @@ public class ProfileActivity extends AppCompatActivity {
         editTextSurgeries = findViewById(R.id.editTextSurgeries);
 
         Button buttonSaveMedicalDetails = findViewById(R.id.saveButton);
+
+        BottomNavigationView bottomNavView = findViewById(R.id.bottom_nav_view);
+        BottomNavigationHelper.setupBottomNavigation(bottomNavView, this);
+
+        // Highlight the profile icon in the bottom navigation bar
+        bottomNavView.getMenu().findItem(R.id.menu_profile).setChecked(true);
         buttonSaveMedicalDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveMedicalDetails();
             }
         });
-
-        BottomNavigationView bottomNavView = findViewById(R.id.bottom_nav_view);
-        BottomNavigationHelper.setupBottomNavigation(bottomNavView, this);
     }
 
     private void saveMedicalDetails() {

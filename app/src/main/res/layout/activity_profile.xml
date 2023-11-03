@@ -164,18 +164,30 @@
                 android:id="@+id/editTextOtherMedicalIssues"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:inputType="textMultiLine"
+                android:gravity="start|top"
                 android:hint="Other Medical Issues" />
 
             <EditText
                 android:id="@+id/editTextSignificantInjuries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:inputType="textMultiLine"
+                android:gravity="start|top"
                 android:hint="Significant Injuries" />
 
             <EditText
                 android:id="@+id/editTextSurgeries"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:inputType="textMultiLine"
+                android:gravity="start|top"
                 android:hint="Surgeries/Procedures" />
 
             <!-- Save Button -->
@@ -185,6 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
+                android:background="#FFFFFF"
                 android:text="Save" />
 
         </LinearLayout>
