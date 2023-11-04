@@ -3,8 +3,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
@@ -17,12 +16,32 @@
             <!-- CheckBoxes for health conditions -->
 
             <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="Personal Details"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:hint="Full Name"
+                android:inputType="text"
+                android:padding="8dp" />
+
+            <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
-                android:text="Personal Health History"
+                android:text="Medical Details"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -160,35 +179,6 @@
             <!-- Other CheckBoxes -->
 
             <!-- EditText fields for additional medical details -->
-            <EditText
-                android:id="@+id/editTextOtherMedicalIssues"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:padding="8dp"
-                android:inputType="textMultiLine"
-                android:gravity="start|top"
-                android:hint="Other Medical Issues" />
-
-            <EditText
-                android:id="@+id/editTextSignificantInjuries"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:padding="8dp"
-                android:inputType="textMultiLine"
-                android:gravity="start|top"
-                android:hint="Significant Injuries" />
-
-            <EditText
-                android:id="@+id/editTextSurgeries"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:padding="8dp"
-                android:inputType="textMultiLine"
-                android:gravity="start|top"
-                android:hint="Surgeries/Procedures" />
 
             <!-- Save Button -->
             <Button

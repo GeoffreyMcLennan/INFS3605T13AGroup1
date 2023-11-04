@@ -29,10 +29,6 @@ public class ProfileActivity extends AppCompatActivity {
         checkBoxAcidReflux = findViewById(R.id.checkBoxAcidReflux);
         // Initialize CheckBox variables for other health conditions
 
-        editTextOtherMedicalIssues = findViewById(R.id.editTextOtherMedicalIssues);
-        editTextSignificantInjuries = findViewById(R.id.editTextSignificantInjuries);
-        editTextSurgeries = findViewById(R.id.editTextSurgeries);
-
         Button buttonSaveMedicalDetails = findViewById(R.id.saveButton);
 
         BottomNavigationView bottomNavView = findViewById(R.id.bottom_nav_view);
