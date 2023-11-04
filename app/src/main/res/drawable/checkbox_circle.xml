@@ -1,0 +1,5 @@
+<!-- res/drawable/checkbox_circle.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#d2d3d5" /> <!-- Color for the circular checkbox -->
+    <corners android:radius="100dp" /> <!-- Use a large radius to create a circle -->
+</shape>

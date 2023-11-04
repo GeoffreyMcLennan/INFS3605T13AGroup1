@@ -5,7 +5,6 @@
   <!-- Border Shape -->
   <item>
     <shape android:shape="oval">
-      <solid android:color="#000000" />
     </shape>
   </item>
 
@@ -13,7 +12,6 @@
   <item android:left="2dp" android:right="2dp" android:top="2dp" android:bottom="2dp">
     <vector
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:aapt="http://schemas.android.com/aapt"
         android:width="250dp"
         android:height="250dp"
         android:viewportWidth="272"
@@ -23,20 +21,8 @@
             android:pathData="M272 136C272 211.111 211.111 272 136 272C60.8893 272 0 211.111 0 136C0 60.8893 60.8893 0 136 0C211.111 0 272 60.8893 272 136Z" />
         <path
             android:pathData="M0 0V272H272V0"
-            android:fillColor="#FF7A7A" />
-        <path
-            android:pathData="M272 136C272 211.111 211.111 272 136 272C60.8893 272 0 211.111 0 136C0 60.8893 60.8893 0 136 0C211.111 0 272 60.8893 272 136Z"
-            android:strokeWidth="2"
-            android:strokeColor="#000000" /> <!-- Black Border -->
+            android:fillColor="#f45251" />
       </group>
     </vector>
   </item>
-
-  <!-- Centered Icon -->
-  <item android:drawable="@drawable/notifications_48px"
-      android:width="110dp"
-      android:height="110dp"
-      android:gravity="center"
-      android:fillColor="#000000" />
-
 </layer-list>

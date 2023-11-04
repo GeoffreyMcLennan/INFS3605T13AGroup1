@@ -3,48 +3,61 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ScrollView
+    <FrameLayout
+        android:id="@+id/doc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-            <!-- CheckBoxes for health conditions -->
+            <!-- Icon at the top -->
+            <ImageView
+                android:id="@+id/doc_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/red_medical_document"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
-                android:text="Personal Details"
-                android:textColor="#000000"
+                android:text="Medical Profile"
+                android:textColor="#404040"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_below="@id/doc">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <!-- CheckBoxes for health conditions -->
 
             <EditText
                 android:id="@+id/editTextUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:hint="Full Name"
-                android:inputType="text"
-                android:padding="8dp" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                android:text="Medical Details"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:hint="Enter Your Full Name"
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -52,8 +65,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
-                android:text="Let's assess your current medical background"
-                android:textColor="#AEAEAE"
+                android:text="Check all that apply "
+                android:textColor="#d2d3d5"
                 android:textSize="16sp" />
 
             <FrameLayout
@@ -81,43 +94,50 @@
                             android:id="@+id/checkBoxAcidReflux"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Acid Reflux" />
 
                         <CheckBox
                             android:id="@+id/checkBoxAlcoholAddiction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Alcohol Addiction" />
 
                         <CheckBox
                             android:id="@+id/checkBoxDepression"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Depression" />
 
                         <CheckBox
                             android:id="@+id/checkBoxSleepDisorders"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Sleep Disorders" />
 
                         <CheckBox
                             android:id="@+id/checkBoxObesity"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Obesity" />
 
                         <CheckBox
                             android:id="@+id/checkBoxThyroidIssues"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Thyroid Issues" />
 
                         <CheckBox
                             android:id="@+id/checkBoxArthritis"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Arthritis" />
+                            android:text="Arthritis"
+                            app:buttonTint="#f45251" />
 
                         <!-- Add more CheckBoxes for the first set as needed -->
 
@@ -134,42 +154,49 @@
                             android:id="@+id/checkBoxAllergyProblems"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Allergy Problems" />
 
                         <CheckBox
                             android:id="@+id/checkBoxAnemia"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Anemia" />
 
                         <CheckBox
                             android:id="@+id/checkBoxAsthma"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Asthma" />
 
                         <CheckBox
                             android:id="@+id/checkBoxDiabetes"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Diabetes" />
 
                         <CheckBox
                             android:id="@+id/checkBoxHighBloodPressure"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="High Blood Pressure" />
 
                         <CheckBox
                             android:id="@+id/checkBoxHeartDisease"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Heart Disease" />
 
                         <CheckBox
                             android:id="@+id/checkBoxAutoImmuneDisease"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            app:buttonTint="#f45251"
                             android:text="Autoimmune Disease" />
 
                     </LinearLayout>
@@ -181,14 +208,15 @@
             <!-- EditText fields for additional medical details -->
 
             <!-- Save Button -->
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:background="#FFFFFF"
-                android:text="Save" />
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_rounded_corners"
+                android:text="Save"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
