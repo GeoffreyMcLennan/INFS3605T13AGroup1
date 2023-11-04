@@ -16,19 +16,19 @@
 
                 <path
                     android:pathData="M0 0V111H171V0"
-                    android:fillColor="#CCC4C4" />
+                    android:fillColor="#FFFFFF" />
 
                 <path
                     android:pathData="M30 0H141C157.569 0 171 13.4315 171 30V81C171 97.5685 157.569 111 141 111H30C13.4315 111 0 97.5685 0 81V30C0 13.4315 13.4315 0 30 0Z"
-                    android:strokeWidth="2"
-                    android:strokeColor="#000000" />
+                    android:strokeWidth="5"
+                    android:strokeColor="#CFCBCB" />
 
             </group>
 
         </vector>
 
     </item>
-    <item android:drawable="@drawable/wrench"
+    <item android:drawable="@drawable/red_gears"
         android:width="70dp"
         android:height="70dp"
         android:gravity="center"
