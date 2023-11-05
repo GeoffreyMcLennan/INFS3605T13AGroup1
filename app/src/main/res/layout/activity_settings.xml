@@ -64,7 +64,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="16dp"
-                app:buttonTint="#f4625b"
                 android:layout_marginTop="16dp"/>
 
             <!-- Switch for enabling/disabling Notifications -->
@@ -76,7 +75,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/darkModeSwitch"
                 android:layout_marginStart="16dp"
-                app:buttonTint="#f4625b"
                 android:layout_marginTop="16dp"/>
 
             <!-- Spinner for Language Selection -->
