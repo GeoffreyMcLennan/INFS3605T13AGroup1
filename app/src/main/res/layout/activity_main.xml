@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -16,6 +15,7 @@
         android:layout_marginEnd="16dp"
         android:src="@drawable/info_48px"
         android:background="@android:color/transparent"
+        app:tint="#f4625b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,13 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/location_on_48px"
         android:background="@android:color/transparent"
+        android:src="@drawable/location_on_48px"
+        app:tint="#f4625b"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/sosButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
@@ -39,6 +40,7 @@
         android:layout_marginEnd="65dp"
         android:background="@android:color/transparent"
         android:src="@drawable/ellipse_1"
+        android:stateListAnimator="@android:anim/bounce_interpolator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,11 +55,11 @@
         android:textColor="#FFFFFF"
         android:textSize="70sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintBottom_toBottomOf="@+id/sosButton"
+        app:layout_constraintEnd_toEndOf="@+id/sosButton"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/sosButton"
+        app:layout_constraintTop_toTopOf="@+id/sosButton"
         app:layout_constraintVertical_bias="0.505" />
 
     <TextView
@@ -67,7 +69,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="21dp"
         android:text="Location Pending"
-        android:textColor="#404040"
+        android:textColor="?android:textColorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/locationButton"
@@ -83,7 +85,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/sosButton" />
 
     <FrameLayout
         android:layout_width="400dp"
@@ -92,7 +94,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton">
+        app:layout_constraintTop_toBottomOf="@+id/sosButton">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -147,7 +149,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Police"
-                android:textColor="#404040"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/policeButton"
@@ -159,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fire Brigade"
-                android:textColor="#404040"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/fireButton"
@@ -171,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="State Emergency Service"
-                android:textColor="#404040"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/SESButton"
@@ -183,7 +185,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ambulance"
-                android:textColor="#404040"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/ambulanceButton"

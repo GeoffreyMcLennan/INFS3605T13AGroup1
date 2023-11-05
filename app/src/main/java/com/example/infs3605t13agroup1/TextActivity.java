@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 
@@ -23,6 +25,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -54,7 +57,8 @@ public class TextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle(getIntent().getStringExtra("service"));
+        String service = getIntent().getStringExtra("service");
+        setTitle(service);
         locationQuestion = true;
 
         calendar = Calendar.getInstance();
@@ -85,7 +89,18 @@ public class TextActivity extends AppCompatActivity {
                 handleMessageSent();
             }
         });
+        RelativeLayout layout = findViewById(R.id.textLayout);
+        if (service.equals("The Ambulance")){
+            layout.setBackgroundResource(R.drawable.watermark_text_background_ambulance);
+        } else if (service.equals("The Police")){
+            layout.setBackgroundResource(R.drawable.watermark_text_background_police);
+        } else if (service.equals("The Fire Brigade")){
+            layout.setBackgroundResource(R.drawable.watermark_text_background_fire);
+        } else if (service.equals("The State Emergency Service")){
+            layout.setBackgroundResource(R.drawable.watermark_text_background_ses);
+        }
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

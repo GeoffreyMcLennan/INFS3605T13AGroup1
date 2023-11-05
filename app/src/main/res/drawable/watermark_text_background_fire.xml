@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color for the watermark -->
+    <item android:drawable="?android:attr/windowBackground" />
+
+    <!-- Watermark text -->
+    <item
+        android:gravity="center"
+        android:width="100dp"
+        android:height="100dp">
+        <bitmap
+            android:src="@drawable/red_fire"
+            android:gravity="center"
+            android:alpha="0.1" />
+    </item>
+</layer-list>

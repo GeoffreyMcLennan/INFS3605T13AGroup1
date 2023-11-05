@@ -1,5 +1,8 @@
 package com.example.infs3605t13agroup1;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +22,26 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText editTextOtherMedicalIssues;
     private EditText editTextSignificantInjuries;
     private EditText editTextSurgeries;
+    private EditText userName;
+
+    private SharedPreferences sharedPreferences;
+    private int[] checkboxIds = {
+            R.id.checkBoxAcidReflux,
+            R.id.checkBoxAlcoholAddiction,
+            R.id.checkBoxDepression,
+            R.id.checkBoxSleepDisorders,
+            R.id.checkBoxObesity,
+            R.id.checkBoxThyroidIssues,
+            R.id.checkBoxArthritis,
+            R.id.checkBoxAllergyProblems,
+            R.id.checkBoxAnemia,
+            R.id.checkBoxAsthma,
+            R.id.checkBoxDiabetes,
+            R.id.checkBoxHighBloodPressure,
+            R.id.checkBoxHeartDisease,
+            R.id.checkBoxAutoImmuneDisease
+    };
+    private CheckBox[] checkBoxes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +49,23 @@ public class ProfileActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_profile);
 
-        checkBoxAcidReflux = findViewById(R.id.checkBoxAcidReflux);
-        // Initialize CheckBox variables for other health conditions
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        userName = findViewById(R.id.editTextUserName);
+
+        if (sharedPreferences.contains("Name")){
+            String name = sharedPreferences.getString("Name", "hello");
+            userName.setText(name);
+        }
+
+        checkBoxes = new CheckBox[checkboxIds.length];
+        for(int i = 0; i< checkboxIds.length; i++){
+            checkBoxes[i] = findViewById(checkboxIds[i]);
+        }
+
+        for(int i=0; i<checkBoxes.length; i++){
+            String checkBoxKey = "Checkbox"+i;
+            checkBoxes[i].setChecked(sharedPreferences.getBoolean(checkBoxKey, false));
+        }
 
         Button buttonSaveMedicalDetails = findViewById(R.id.saveButton);
 
@@ -45,22 +83,13 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void saveMedicalDetails() {
-        StringBuilder selectedHealthConditions = new StringBuilder();
-        // Check which health conditions are selected
-        if (checkBoxAcidReflux.isChecked()) {
-            selectedHealthConditions.append("Acid Reflux, ");
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Name", userName.getText().toString());
+
+        for(int i=0; i<checkBoxes.length; i++){
+            String checkboxKey = "Checkbox"+i;
+            editor.putBoolean(checkboxKey, checkBoxes[i].isChecked());
         }
-        // Check other health conditions similarly
-
-        String otherMedicalIssues = editTextOtherMedicalIssues.getText().toString();
-        String significantInjuries = editTextSignificantInjuries.getText().toString();
-        String surgeries = editTextSurgeries.getText().toString();
-
-        // Combine selected health conditions and user input into a single string
-        String medicalDetails = selectedHealthConditions.toString() + otherMedicalIssues + "\n" +
-                "Significant Injuries: " + significantInjuries + "\n" +
-                "Surgeries/Procedures: " + surgeries;
-
-        // Save or use the 'medicalDetails' string as needed, such as storing it in a database.
+        editor.apply();
     }
 }

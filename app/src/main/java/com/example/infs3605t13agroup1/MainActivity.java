@@ -19,6 +19,8 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -53,8 +55,11 @@ public class MainActivity extends AppCompatActivity {
         ImageButton sesButton = findViewById(R.id.SESButton);
         ImageButton ambulanceButton = findViewById(R.id.ambulanceButton);
         ImageButton infoButton = findViewById(R.id.infoButton);
+        ImageButton sosButton = findViewById(R.id.sosButton);
         location = findViewById(R.id.location);
         locationButton = findViewById(R.id.locationButton);
+
+        final Animation pulseAnimation = AnimationUtils.loadAnimation(this, R.anim.button_pulse);
 
         BottomNavigationView bottomNavView = findViewById(R.id.bottom_nav_view);
         BottomNavigationHelper.setupBottomNavigation(bottomNavView, this);
@@ -64,10 +69,22 @@ public class MainActivity extends AppCompatActivity {
         }
         getCurrentLocation();
 
+        sosButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                view.startAnimation(pulseAnimation);
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                String phoneNumber = "99999";
+                intent.setData(Uri.parse("tel:" + phoneNumber));
+                startActivity(intent);
+            }
+        });
+
         policeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showEmergencyDialog("the Police");
+                view.startAnimation(pulseAnimation);
+                showEmergencyDialog("The Police");
                 selectedService = "Police";
             }
         });
@@ -75,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
         fireButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showEmergencyDialog("the Fire Brigade");
+                view.startAnimation(pulseAnimation);
+                showEmergencyDialog("The Fire Brigade");
                 selectedService = "Fire and Rescue";
             }
         });
@@ -83,14 +101,16 @@ public class MainActivity extends AppCompatActivity {
         sesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showEmergencyDialog("the State Emergency Service");
+                view.startAnimation(pulseAnimation);
+                showEmergencyDialog("The State Emergency Service");
                 selectedService = "SES";
             }
         });
         ambulanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showEmergencyDialog("the Ambulance");
+                view.startAnimation(pulseAnimation);
+                showEmergencyDialog("The Ambulance");
                 selectedService = "Ambulance";
             }
         });
@@ -103,12 +123,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                view.startAnimation(pulseAnimation);
                 showInfoDialog("Information", message);
             }
         });
         locationButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                view.startAnimation(pulseAnimation);
                 getCurrentLocation();
                 showInfoDialog("Location", "Address: " + address + "\nLatitude: "
                         + displayLatitude + "\nLongitude: " + displayLongitude);
