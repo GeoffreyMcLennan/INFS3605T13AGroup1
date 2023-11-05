@@ -116,10 +116,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         infoButton.setOnClickListener(new View.OnClickListener() {
-            String message = "If you do not know the nature of your emergency, please click the SOS button " +
-                    "to automatically call a Triple Zero (000) operator. Select the Ambulance, Police, Fire " +
-                    "or State Emergency Service button if you do know the nature of your emergency. " +
-                    "Only call emergency services if it is a genuine emergency.";
+            String message = "If you know the nature of your emergency, choose Ambulance, Police, Fire, or State Emergency Service."
+                    + "If you're unsure about your emergency, press the SOS button to connect with a Triple Zero (000) operator."
+                    + "Only call if it's a genuine emergency.";
 
             @Override
             public void onClick(View view) {

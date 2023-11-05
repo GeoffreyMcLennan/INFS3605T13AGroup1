@@ -11,22 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:layout_marginTop="10dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <!-- Icon at the top -->
             <ImageView
                 android:id="@+id/doc_ic"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:src="@drawable/setting"
+                android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:layout_gravity="center_horizontal" />
+                android:src="@drawable/setting" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -63,6 +64,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="16dp"
+                app:buttonTint="#f4625b"
                 android:layout_marginTop="16dp"/>
 
             <!-- Switch for enabling/disabling Notifications -->
@@ -74,6 +76,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/darkModeSwitch"
                 android:layout_marginStart="16dp"
+                app:buttonTint="#f4625b"
                 android:layout_marginTop="16dp"/>
 
             <!-- Spinner for Language Selection -->
@@ -97,6 +100,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/languageSpinner"
                 android:layout_marginStart="16dp"
+                app:buttonTint="#f4625b"
                 android:layout_marginTop="16dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
