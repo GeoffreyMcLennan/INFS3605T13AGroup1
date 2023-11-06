@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -91,5 +92,6 @@ public class ProfileActivity extends AppCompatActivity {
             editor.putBoolean(checkboxKey, checkBoxes[i].isChecked());
         }
         editor.apply();
+        Toast.makeText(this,"Changes Saved", Toast.LENGTH_SHORT).show();
     }
 }
