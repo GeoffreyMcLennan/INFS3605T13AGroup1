@@ -13,24 +13,33 @@
         android:id="@+id/messageListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/messageEditText"
+        android:layout_above="@+id/messageInputLayout"
         android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll" />
 
-    <EditText
-        android:id="@+id/messageEditText"
+    <LinearLayout
+        android:id="@+id/messageInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:hint="Type a message"
-        android:inputType="textMultiLine"
-        android:lines="2" />
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="?android:colorBackground">
 
-    <Button
-        android:id="@+id/sendButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/messageEditText"
-        android:layout_alignParentEnd="true"
-        android:text="Send" />
+        <EditText
+            android:id="@+id/messageEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Type a message"
+            android:inputType="textMultiLine"
+            android:lines="2" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send" />
+    </LinearLayout>
 </RelativeLayout>
