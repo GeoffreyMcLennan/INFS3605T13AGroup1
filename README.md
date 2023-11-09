@@ -1,5 +1,5 @@
 # INFS3605T13AGroup1
-Hello and welcome to our INFS3604 Next Generation Emergency Communication App!
+Hello and welcome to our INFS3605 Next Generation Emergency Communication App!
 
 This application was created in Android Studio and developed using Java. 
 It can be run on an emulator in Android Studio and also transported to an android device that has developer mode enabled.
