@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 selectedService = "SES";
             }
         });
+
         ambulanceButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,6 +170,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, TextActivity.class);
                 intent.putExtra("service", serviceName);
                 startActivity(intent);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Handle cancel button click here, if needed
+                dialog.dismiss(); // Dismiss the dialog
             }
         });
 

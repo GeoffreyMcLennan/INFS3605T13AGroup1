@@ -1,6 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -10,70 +10,61 @@
         android:layout_height="wrap_content"
         android:text="Contact Service Name"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/orTextView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/orTextView" />
 
     <ImageButton
         android:id="@+id/phoneIconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
         android:contentDescription="Phone Icon"
         android:src="@drawable/call_48px"
-        app:layout_constraintBottom_toTopOf="@+id/callText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serviceNameTextView"
-        app:layout_constraintVertical_bias="0.2" />
-
-    <TextView
-        android:id="@+id/callText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Call"
-        app:layout_constraintEnd_toEndOf="@+id/phoneIconButton"
-        app:layout_constraintStart_toStartOf="@+id/phoneIconButton"
-        app:layout_constraintTop_toBottomOf="@+id/phoneIconButton" />
-
-    <TextView
-        android:id="@+id/orTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="8dp"
-        android:text="OR"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/messageIconButton"
-        app:layout_constraintStart_toEndOf="@+id/phoneIconButton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.507" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serviceNameTextView" />
 
     <ImageButton
         android:id="@+id/messageIconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="50dp"
         android:background="@android:color/transparent"
         android:contentDescription="Message Icon"
         android:src="@drawable/sms_48px"
-        app:layout_constraintBottom_toTopOf="@+id/messageText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.011"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serviceNameTextView"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintTop_toBottomOf="@+id/serviceNameTextView" />
+
+    <TextView
+        android:id="@+id/orTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="OR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/messageIconButton"
+        app:layout_constraintStart_toEndOf="@+id/phoneIconButton" />
+
+    <TextView
+        android:id="@+id/callText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Call"
+        app:layout_constraintStart_toStartOf="@+id/phoneIconButton"
+        app:layout_constraintTop_toBottomOf="@+id/phoneIconButton" />
 
     <TextView
         android:id="@+id/messageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:text="Text"
-        app:layout_constraintTop_toBottomOf="@+id/messageIconButton"
         app:layout_constraintStart_toStartOf="@+id/messageIconButton"
-        app:layout_constraintEnd_toEndOf="@+id/messageIconButton" />
+        app:layout_constraintTop_toBottomOf="@+id/messageIconButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
